@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>光｜LIGHT Nail Lab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+  --bg:#f7f5f1;
+
+  --gold:#c6a56b;
+
+  --light:#e9e3d9;
+
+  --text:#2c2620;
+
+  --sub:#9a8d7c;
+
+}
+
+body{
+
+  margin:0;
+
+  background:var(--bg);
+
+  font-family:"Noto Serif TC", serif;
+
+  color:var(--text);
+
+}
+
+/* container */
+
+.container{
+
+  max-width:420px;
+
+  margin:auto;
+
+  padding:20px 18px 120px;
+
+}
+
+/* LOGO */
+
+.logo{
+
+  text-align:center;
+
+  margin:50px 0 20px;
+
+}
+
+.logo-line{
+
+  width:1px;height:50px;background:var(--gold);margin:auto;
+
+}
+
+.logo h1{
+
+  font-family:"Cormorant Garamond";
+
+  font-size:90px;
+
+  letter-spacing:0.2em;
+
+}
+
+.logo p{
+
+  font-size:12px;
+
+  letter-spacing:.35em;
+
+  color:var(--gold);
+
+}
+
+/* dots */
+
+.dots{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:6px;
+
+  margin:15px 0 25px;
+
+}
+
+.dots span{
+
+  width:5px;height:5px;border-radius:50%;
+
+  background:var(--gold);
+
+}
+
+/* social */
+
+.social{
+
+  display:flex;gap:10px;justify-content:center;margin-bottom:25px;
+
+}
+
+.social a{
+
+  padding:10px 20px;
+
+  border-radius:30px;
+
+  border:1px solid var(--light);
+
+  text-decoration:none;
+
+  color:var(--sub);
+
+  font-size:12px;
+
+}
+
+.social a:active{transform:scale(.95);}
+
+/* tabs */
+
+.tabs{
+
+  display:flex;
+
+  border:1px solid var(--light);
+
+  border-radius:14px;
+
+  overflow:hidden;
+
+  margin-bottom:20px;
+
+}
+
+.tabs button{
+
+  flex:1;
+
+  padding:14px;
+
+  border:none;
+
+  background:none;
+
+  font-size:13px;
+
+  color:var(--sub);
+
+}
+
+.tabs .active{
+
+  background:#e9e3d9;
+
+  color:var(--text);
+
+}
+
+/* subtabs */
+
+.subtabs{
+
+  display:flex;gap:10px;margin-bottom:20px;
+
+}
+
+.subtabs button{
+
+  flex:1;
+
+  padding:14px 10px;
+
+  border-radius:14px;
+
+  border:1px solid var(--light);
+
+  background:white;
+
+}
+
+.subtabs .active{
+
+  border:1px solid var(--gold);
+
+  box-shadow:0 5px 10px rgba(0,0,0,.05);
+
+}
+
+/* section */
+
+.section{margin-bottom:25px;}
+
+.section-title{
+
+  font-size:12px;
+
+  letter-spacing:.3em;
+
+  color:var(--gold);
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+}
+
+.section-title::after{
+
+  content:"";flex:1;height:1px;background:var(--light);
+
+}
+
+/* item */
+
+.item{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  padding:14px 4px;
+
+  border-bottom:1px solid var(--light);
+
+}
+
+.item:last-child{border:none;}
+
+.note{font-size:11px;color:var(--sub);}
+
+/* about */
+
+.about{
+
+  background:#ece6dc;
+
+  padding:30px 20px;
+
+  border-radius:16px;
+
+  line-height:2.2;
+
+}
+
+/* footer */
+
+.footer{
+
+  text-align:center;
+
+  margin-top:40px;
+
+}
+
+.footer .logo-mini{
+
+  font-size:40px;
+
+  color:var(--gold);
+
+}
+
+.footer-line{
+
+  width:1px;height:40px;background:var(--gold);margin:15px auto;
+
+}
+
+.footer-text{
+
+  font-size:11px;color:#aaa;
+
+}
+
+/* pages */
+
+.page{display:none;}
+
+.page.active{display:block;animation:fade .5s;}
+
+@keyframes fade{
+
+  from{opacity:0;transform:translateY(10px);}
+
+}
+
+/* 浮動預約 */
+
+.floating{
+
+  position:fixed;
+
+  right:15px;
+
+  bottom:90px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+
+}
+
+.float-btn{
+
+  padding:12px 14px;
+
+  border-radius:30px;
+
+  font-size:12px;
+
+  text-decoration:none;
+
+  color:#fff;
+
+}
+
+.ig{background:#c6a56b;}
+
+.line{background:#6fbf73;}
+
+/* 底部CTA */
+
+.cta{
+
+  position:fixed;
+
+  bottom:0;
+
+  left:0;
+
+  right:0;
+
+  background:#fff;
+
+  border-top:1px solid var(--light);
+
+  text-align:center;
+
+  padding:12px;
+
+}
+
+.cta a{
+
+  background:var(--gold);
+
+  color:#fff;
+
+  padding:12px 30px;
+
+  border-radius:30px;
+
+  text-decoration:none;
+
+  font-size:14px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+
+  <div class="logo-line"></div>
+
+  <h1>光</h1>
+
+  <p>LIGHT NAIL LAB</p>
+
+</div>
+
+<div class="dots">
+
+  <span></span><span style="opacity:.5"></span><span style="opacity:.3"></span>
+
+</div>
+
+<div class="social">
+
+  <a href="#">Instagram</a>
+
+  <a href="#">LINE</a>
+
+</div>
+
+<!-- 分頁 -->
+
+<div class="tabs">
+
+  <button class="active" onclick="switchPage('menu',this)">價目表</button>
+
+  <button onclick="switchPage('about',this)">關於本店</button>
+
+</div>
+
+<!-- 價目 -->
+
+<div class="page active" id="menu">
+
+<div class="subtabs">
+
+  <button class="active" onclick="switchTab('hand',this)">手部</button>
+
+  <button onclick="switchTab('foot',this)">足部</button>
+
+  <button onclick="switchTab('care',this)">保養</button>
+
+</div>
+
+<div id="hand" class="tab active">
+
+  <div class="section">
+
+    <div class="section-title">凝膠項目</div>
+
+    <div class="item"><span>透明</span><span>$600</span></div>
+
+    <div class="item"><span>單色</span><span>$700</span></div>
+
+    <div class="item"><span>貓眼</span><span>$800</span></div>
+
+    <div class="item"><span>造型</span><span>$900起</span></div>
+
+  </div>
+
+</div>
+
+<div id="foot" class="tab" style="display:none;">
+
+  <div class="section">
+
+    <div class="section-title">足部凝膠</div>
+
+    <div class="item"><span>單色</span><span>$800</span></div>
+
+    <div class="item"><span>貓眼</span><span>$900</span></div>
+
+  </div>
+
+</div>
+
+<div id="care" class="tab" style="display:none;">
+
+  <div class="section">
+
+    <div class="section-title">保養</div>
+
+    <div class="item"><span>手部保養</span><span>$300</span></div>
+
+    <div class="item"><span>足部保養</span><span>$450</span></div>
+
+  </div>
+
+</div>
+
+</div>
+
+<!-- 關於 -->
+
+<div class="page" id="about">
+
+  <div class="about">
+
+    光 𝚕𝚒𝚐𝚑𝚝<br><br>
+
+    空間充滿著木紋色調，打造溫暖放鬆氛圍。<br><br>
+
+    在木質調裡慢慢變美，是我們的日常儀式感。<br><br>
+
+    讓光藏在你的細節裡，<br>
+
+    而光 在等你們的到來 ✨
+
+  </div>
+
+</div>
+
+<div class="footer">
+
+  <div class="logo-mini">光</div>
+
+  <div class="footer-text">價格如有調整，以現場公告為準</div>
+
+  <div class="footer-line"></div>
+
+</div>
+
+</div>
+
+<!-- 浮動按鈕 -->
+
+<div class="floating">
+
+  <a class="float-btn ig" href="#">IG</a>
+
+  <a class="float-btn line" href="#">LINE</a>
+
+</div>
+
+<!-- CTA -->
+
+<div class="cta">
+
+  <a href="#">立即預約</a>
+
+</div>
+
+<script>
+
+function switchPage(id,btn){
+
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+
+  document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+
+  document.getElementById(id).classList.add('active');
+
+  btn.classList.add('active');
+
+}
+
+function switchTab(id,btn){
+
+  document.querySelectorAll('.tab').forEach(t=>t.style.display='none');
+
+  document.querySelectorAll('.subtabs button').forEach(b=>b.classList.remove('active'));
+
+  document.getElementById(id).style.display='block';
+
+  btn.classList.add('active');
+
+}
+
+</script>
+
+</body>
+
+</html>
